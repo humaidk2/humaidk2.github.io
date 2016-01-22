@@ -1,0 +1,54 @@
+<html>
+
+	<head>
+		<title>Humaid's website</title>
+		<link rel="stylesheet" type="text/css" href="damn.css">
+
+	</head>
+	<body>
+
+		<span>
+			<div id="section">
+				<form>
+					<input  id="manga" type="text" name="fname" placeholder="Player 1">
+				</form>
+				
+				<button onclick="cool('lolzers',1)">+</button>
+				<form>
+					<input  id="lolzers" type="text" name="fname" value="0">
+				</form>
+				<button id="button1" onclick="cool('lolzers',2)">-</button>
+				<!-- <div id="new">Theme 2</div>  -->
+			</div>
+
+			<div id="cool">
+				<form>
+					<input id="anime" type="text" name="lname" placeholder="Player 2">
+				</form>
+				
+				<button onclick="cool('kkk',1)">+</button>
+				<form>
+					<input  id="kkk" type="text" name="fname" value="0">
+				</form>
+				<button id="button1" onclick="cool('kkk',2)">-</button>
+			</div>
+		</span>
+		<div id="new">Theme 2</div>
+<script>
+function cool(y,x) {
+	if(x===1)
+	{
+		if(document.getElementById(y).value<100)
+			document.getElementById(y).value++;
+		else
+			document.getElementById(y).value=0;
+	}
+	else if(x===2)
+	{
+		if(document.getElementById(y).value!=0)
+			document.getElementById(y).value--;
+	}
+}
+</script>
+</body>
+</html>
