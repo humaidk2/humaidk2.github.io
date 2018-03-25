@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		@font-face {
+		    font-family: typewriter;
+		    src: url(typewriter.ttf);
+		}
+		html, body{
+			height: 100%;
+			font-size: 100%;
+			font-family: typewriter;
+		}
+		body{
+		    background-image: url("background3.jpg");
+		    height: 100%; 
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: 30px;
+		}
+		button{
+			width: 50px;
+		}
+		::-webkit-scrollbar {
+		    width: 0px;
+		    background: transparent; /* make scrollbar transparent */
+		}
+		#myModal .modal-content{
+			background: black;
+			color: white;
+		}
+		#errorModal .modal-content{
+			background: red;
+			color: white;
+		}
+		.modal-content{
+			margin-top: 25%;
+			animation-name: animatetop;
+    		animation-duration: 0.4s
+		}
+		.close{
+			color: white;
+			opacity: 1;
+		}
+		.close:hover{
+			opacity: 0.5;
+			color: white;
+		}
+		#userInput{
+			color: black;
+		}
+		.main-btn{
+			width: 60px;
+			height: 50px;
+			background: skyblue;
+			margin-left: 6%;
+			font-size: 13px;
+			color: black;
+			border: none;
+			border-radius: 30px;
+		}
+		.main-btn:hover{
+			background: #e0cf3c;
+			box-shadow: 2px 3px 5px grey;
+		}
+		.direction-button{
+			width: 60px;
+			height: 50px;
+			background: skyblue;
+			font-family: Serif;
+			font-size: 20px;
+			margin-bottom: 4px;
+			color: black;
+			border: none;
+			border-radius: 30px;
+		}
+		.direction-button:hover{
+			background: #e0cf3c;
+			box-shadow: 2px 3px 5px grey;
+		}
+		.box {
+			width: 190px;
+			height: 400px;
+			word-wrap: break-word;
+			text-align: center;
+			overflow-y: scroll;
+		}
+		#full-form{
+			height: 80%;
+			width: 80%;
+		    padding: 2%;
+			margin-left: 3%;
+			border-radius: 4px;
+		}
+		#black-box{
+			background: rgba(0, 0, 0, 0.5);
+			height: 350px;
+			width: 192px;
+			margin-left: 17.8%;
+			margin-top: 7.5%;
+			color: darkgreen;
+			transform: rotate(39.8deg);
+		}
+		#grey-box {
+			background: rgba(0, 0, 0, 0.5);
+			color: darkgreen;
+			height: 440px;
+			width: 190px;
+			margin-top: 15%;
+			margin-left: 8.7%;
+			transform: rotate(-23.8deg);
+		}
+		#box-form{
+			display: flex;
+		}
+		.buttons{
+			margin-top: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#left-right{
+			margin-left: 5%;
+			margin-right: 5%;
+			margin-top: 10%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.btn{	
+			background: black;
+			width: 100px;
+			color: white;
+		}
+		/* Add Animation */
+		@keyframes animatetop {
+		    from {margin-top: 0%;}
+		    to {margin-top: 25%;}
+		}
+
+	</style>
+</head>
+<body>
+	<div id="full-form">
+		<button class="main-btn" onclick="modalStart();">Start</button>
+		<button class="main-btn" onclick="clearAll();">Clear</button>
+		<div id="box-form">
+			<div id="black-box" class="box">
+				<div id="black-box-text"></div>
+			</div>
+			<div id="left-right">
+				<div class="buttons">
+					<button class="direction-button" onclick="moveRight();">--&gt;</button>
+				</div>
+				<div class="buttons">
+					<button class="direction-button" onclick="moveLeft();">&lt;--</button>
+				</div>
+			</div>
+				<div id="grey-box" class="box">
+				<div id="grey-box-text"></div>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Please enter a word</h4>
+		      </div>
+		      <div class="modal-body">
+		        <input id="userInput" type="text" name="userInput">
+		        <button type="button" onclick="startMain();" onkeyup="" class="btn btn-default" type="submit" data-dismiss="modal">Submit</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+		<div id="errorModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Error</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>A value already exists</p>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+	</div>
+	<script type="text/javascript" >
+		var flag = 0;
+		function startMain() {
+			var inputText =	document.getElementById('userInput').value;
+			var blackBoxText = document.getElementById('black-box-text');
+			var blackBox = document.getElementById('black-box');
+			blackBoxText.innerHTML = inputText;
+			blackBox.style.backgroundColor = "black";
+			flag = 1;
+			document.getElementById('userInput').value = '';
+		}
+		function modalStart() {
+			if(flag === 0) {
+				$('#myModal').modal();
+			} else {
+				$('#errorModal').modal();
+			}
+
+		}
+		$('#myModal').on('shown.bs.modal', function () {
+		    $('#userInput').focus();
+		})
+		$('#userInput').keypress(function(e) {
+			if(e.which === 13) {
+				startMain();
+				document.getElementById('userInput').value = '';
+				$('#myModal').modal('hide');
+			}
+		});
+		function clearAll() {
+			var blackBoxText = document.getElementById('black-box-text');
+			var greyBoxText = document.getElementById('grey-box-text');
+			var blackBox = document.getElementById('black-box');
+			var greyBox = document.getElementById('grey-box');
+			blackBoxText.innerHTML = "";
+			greyBoxText.innerHTML = "";
+			greyBox.style.backgroundColor = "rgba(128, 128, 128, 0.5)";
+			blackBox.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+			flag = 0;
+		}
+		function moveRight() {
+			var blackBoxText = document.getElementById('black-box-text');
+			var greyBoxText = document.getElementById('grey-box-text');
+			var blackBox = document.getElementById('black-box');
+			var greyBox = document.getElementById('grey-box');
+			if(greyBoxText.innerHTML === "" && blackBoxText.innerHTML !== "") {
+				greyBoxText.innerHTML = blackBoxText.innerHTML;
+				greyBox.style.backgroundColor = "grey";
+				blackBox.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+				blackBoxText.innerHTML = "";
+			}
+		}
+		function moveLeft() {
+			var blackBoxText = document.getElementById('black-box-text');
+			var greyBoxText = document.getElementById('grey-box-text');
+			var blackBox = document.getElementById('black-box');
+			var greyBox = document.getElementById('grey-box');
+			if(blackBoxText.innerHTML === "" && greyBoxText.innerHTML !== "") {
+				blackBoxText.innerHTML = greyBoxText.innerHTML;
+				blackBox.style.backgroundColor = "black";
+				greyBox.style.backgroundColor = "rgba(128, 128, 128, 0.5)";
+				greyBoxText.innerHTML = "";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+html, body{
+	height: 96%;
+	font-size: 100%;
+}
+body{
+	background: #f4e242;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+button{
+	width: 50px;
+}
+#errorModal{
+	color: red;
+}
+.main-btn{
+	width: 200px;
+	height: 90px;
+	background: #f4e242;
+	color: black;
+	border: none;
+	border-radius: 30px;
+}
+.main-btn:hover{
+	background: #e0cf3c;
+	box-shadow: 2px 3px 5px grey;
+}
+.direction-button{
+	width: 100px;
+	height: 60px;
+	margin-bottom: 4px;
+	background: #f4e242;
+	color: black;
+	border: none;
+	border-radius: 30px;
+}
+.direction-button:hover{
+	background: #e0cf3c;
+	box-shadow: 2px 3px 5px grey;
+}
+.box {
+	width: 450px;
+	height: 300px;
+	margin: 2%;
+	color: white;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#full-form{
+	background: linear-gradient(to bottom right, #f4e242 , black);
+	padding: 2%;
+	border-radius: 4px;
+	justify-content: center;
+}
+#black-box{
+	background: black;
+	border-radius: 50%;
+}
+#grey-box {
+	background: grey;
+	border-radius: 50%;	
+}
+#box-form{
+	display: flex;
+}
+.buttons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#left-right{
+	margin-left: 10%;
+	margin-right: 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.btn{	
+	background: black;
+	width: 100px;
+	color: white;
+}
