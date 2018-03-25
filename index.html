@@ -102,7 +102,6 @@
 			border-radius: 4px;
 		}
 		#black-box{
-			background: rgba(0, 0, 0, 0.5);
 			height: 350px;
 			width: 192px;
 			margin-left: 17.8%;
@@ -111,7 +110,6 @@
 			transform: rotate(39.8deg);
 		}
 		#grey-box {
-			background: rgba(0, 0, 0, 0.5);
 			color: darkgreen;
 			height: 440px;
 			width: 190px;
@@ -209,9 +207,7 @@
 		function startMain() {
 			var inputText =	document.getElementById('userInput').value;
 			var blackBoxText = document.getElementById('black-box-text');
-			var blackBox = document.getElementById('black-box');
 			blackBoxText.innerHTML = inputText;
-			blackBox.style.backgroundColor = "black";
 			flag = 1;
 			document.getElementById('userInput').value = '';
 		}
@@ -236,35 +232,23 @@
 		function clearAll() {
 			var blackBoxText = document.getElementById('black-box-text');
 			var greyBoxText = document.getElementById('grey-box-text');
-			var blackBox = document.getElementById('black-box');
-			var greyBox = document.getElementById('grey-box');
 			blackBoxText.innerHTML = "";
 			greyBoxText.innerHTML = "";
-			greyBox.style.backgroundColor = "rgba(128, 128, 128, 0.5)";
-			blackBox.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 			flag = 0;
 		}
 		function moveRight() {
 			var blackBoxText = document.getElementById('black-box-text');
 			var greyBoxText = document.getElementById('grey-box-text');
-			var blackBox = document.getElementById('black-box');
-			var greyBox = document.getElementById('grey-box');
 			if(greyBoxText.innerHTML === "" && blackBoxText.innerHTML !== "") {
 				greyBoxText.innerHTML = blackBoxText.innerHTML;
-				greyBox.style.backgroundColor = "grey";
-				blackBox.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 				blackBoxText.innerHTML = "";
 			}
 		}
 		function moveLeft() {
 			var blackBoxText = document.getElementById('black-box-text');
 			var greyBoxText = document.getElementById('grey-box-text');
-			var blackBox = document.getElementById('black-box');
-			var greyBox = document.getElementById('grey-box');
 			if(blackBoxText.innerHTML === "" && greyBoxText.innerHTML !== "") {
 				blackBoxText.innerHTML = greyBoxText.innerHTML;
-				blackBox.style.backgroundColor = "black";
-				greyBox.style.backgroundColor = "rgba(128, 128, 128, 0.5)";
 				greyBoxText.innerHTML = "";
 			}
 		}
