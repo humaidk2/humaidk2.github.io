@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<div id="container">
+		<div id="projector-container">
+			<img id="projector" src="./projector.png" />
+		</div>
+		<div id="canvas-container">
+			<canvas id="myCanvas" width="651px">
+				
+			</canvas>
+		</div>
+		<div class="project-container">
+			<div class="image-overlay">
+			</div>
+			<div class="image-container">
+				<img id="goofyPic" src="../wall.jpg">
+				</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		window.onload = function() {
+			var canvas = document.getElementById("myCanvas");
+			canvas.height = window.innerHeight;
+			 if (canvas.getContext) {
+    		var ctx = canvas.getContext('2d');
+    		var yCoord = 651;
+    		var xCoord = 300;
+    		var range = 220;
+			ctx.beginPath();
+		    ctx.moveTo(0, xCoord);
+		    ctx.lineTo(yCoord, xCoord + range);
+		    ctx.lineTo(yCoord, xCoord - range);
+		    var grd = ctx.createLinearGradient(yCoord, xCoord - range, yCoord, xCoord + range);
+			grd.addColorStop(0, "black");
+			grd.addColorStop(0.5, "#ffd0a0");
+			grd.addColorStop(1, "black");
+		 //    var image2 = new Image();
+		 //    image2.src = "../wall.jpg";
+		 //    ctx.drawImage(image2, yCoord, xCoord - range, 180, range*2);
+			// // Fill with gradient
+			ctx.fillStyle = grd;
+		    ctx.fill();
+		 //    ctx.closePath();
+			// ctx.beginPath();
+			// var grd = ctx.createLinearGradient(yCoord +180, xCoord - range + (range * 2), yCoord + 180, xCoord - range);
+			// grd.addColorStop(0, "black");
+			// grd.addColorStop(0.5, "rgba(255, 208, 160,0.8)");
+			// grd.addColorStop(1, "black");
+			// ctx.fillStyle = grd;
+			// ctx.fillRect(yCoord, xCoord - range, yCoord + 180, xCoord - range + (range*2));
+		 //    ctx.closePath();
+		}
+		};
+	</script>
+</body>
+</html>

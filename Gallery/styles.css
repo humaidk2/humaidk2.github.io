@@ -1,0 +1,83 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+	background: black;
+}
+.container{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.gallery{
+	align-items: center;
+	height: 80%;
+	width: 50%;
+	display: flex;
+	flex-direction: row;
+
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scroll: touch;
+  justify-content: flex-start;
+}
+.img{
+	height: 20%;
+	transform: translate3d(0%, -80%, 0);
+	flex: 1 1 0;
+	box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.1)));
+          transform-origin: 40% 40%;
+          transform: translate3d(0, 0, 0) perspective(15vw) rotateY(-75deg);
+  position: relative;
+  opacity: 1;
+  transition: box-shadow 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.gallery > div:hover, .gallery > div:active {
+ transform: translate3d(0, 0, 0) perspective(15vw) scale(1.1) rotateY(-20deg);
+  z-index: 99;
+}
+.gallery > div:hover:after, .gallery > div:active:after {
+  opacity: 0.2;
+}
+.gallery > div:hover span, .gallery > div:active span {
+  opacity: 0.9;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.gallery > div:nth-child(99) {
+  z-index: 1;
+}
+.gallery > div:nth-child(98) {
+  z-index: 2;
+}
+.gallery > div:nth-child(97) {
+  z-index: 3;
+}
+.gallery > div:nth-child(96) {
+  z-index: 4;
+}
+.gallery > div:nth-child(95) {
+  z-index: 5;
+}
+img{
+	height: 100%;
+	width: 100%;
+}
