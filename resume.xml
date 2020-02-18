@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="resume-template.xsl"?>
+<resume>
+	<contact>
+    <logo>./logo7.png</logo>
+	  <firstname>Humaid</firstname>
+	  <lastname>Khan</lastname>
+	  <uniname>UOWD</uniname>
+    <aboutme>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et </aboutme>
+	  <address>
+	  	<street>M</street>
+	  	<area>Murraqabat</area>
+	  	<city>Dubai</city>
+	  	<country>UAE</country>
+	  </address>
+	  <phonenumber>971508446095</phonenumber>
+	</contact>
+  <skills>
+  	<skill skilltype="language">
+      <skillset>
+        <skillname>Java</skillname>
+        <skillprogress>80%</skillprogress>
+      </skillset>
+      <skillset>
+        <skillname>Git</skillname>
+        <skillprogress>100%</skillprogress>
+      </skillset>
+      <skillset>
+        <skillname>HTML</skillname>
+        <skillprogress>10%</skillprogress>
+      </skillset>
+      <skillset>
+        <skillname>CSS</skillname>
+        <skillprogress>50%</skillprogress>
+      </skillset>
+      <skillset>
+        <skillname>Javascript</skillname>
+        <skillprogress>100%</skillprogress>
+      </skillset>
+  	</skill>
+  	<skill skilltype="otherskills">
+      <skillset>
+	  	  <skillname>Gimp</skillname>
+        <skillprogress>80%</skillprogress>
+      </skillset>
+      <skillset>
+        <skillname>Security</skillname>
+        <skillprogress>50%</skillprogress>
+      </skillset>
+      <skillset>
+        <skillname>Cloud Computing</skillname>
+        <skillprogress>30%</skillprogress>
+      </skillset>
+  	</skill>
+  </skills>
+  <projects>
+    <projectsheader>JAVA projects</projectsheader>
+  	<project>
+  		<projectname>JAVA Calculator</projectname>
+  		<projectdescription>Cool calculator built in javafx Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</projectdescription>
+  		<projectlink>https://github.com/humaidk2</projectlink>
+  		<projectdate>19042018</projectdate>
+  	</project>
+  	<project>
+  		<projectname>Jumping html</projectname>
+  		<projectdescription>Cool design for simple website.
+        Works with html, css, and javascript
+        modal boxes for design were imported from bootstrap</projectdescription>
+  		<projectlink>https://humaidk2.github.io</projectlink>
+  		<projectdate>12042018</projectdate>
+  	</project>
+  </projects>
+  <projects>
+    <projectsheader>Web/Javascript projects</projectsheader>
+    <project>
+      <projectname>Vrpacman</projectname>
+      <projectdescription>Vrpacman is a virtual reality version of the classic original
+        Pac-man. It works using BabylonJS as the 3d renderer and CannonJs as the physics engine
+        React was used as a front-end framework and nodejs at the back-end</projectdescription>
+      <projectlink>https://vrpacman.com</projectlink>
+      <projectdate>15122017</projectdate>
+    </project>
+    <project>
+      <projectname>Money-io</projectname>
+      <projectdescription>Cool money tracking app. Built using react and mongodb.
+        NodeJs was used to build the back-end</projectdescription>
+      <projectlink>https://github.com/humaidk2/money-io/</projectlink>
+      <projectdate>11122017</projectdate>
+    </project>
+    <project>
+      <projectname>LifeCraft</projectname>
+      <projectdescription>Cool exercise app. Added quiz api and used react native sensors to get user interactions. Built using react and mysql.
+        NodeJs was used to build the back-end. Ported to react-native for mobile use.</projectdescription>
+      <projectlink>https://github.com/humaidk2/lifecraft/</projectlink>
+      <projectdate>11122017</projectdate>
+    </project>
+  </projects>
+  <hobbies>
+    <hobby>
+  	 <hobbyname>Photography</hobbyname>
+    </hobby>
+    <hobby>
+  	 <hobbyname>Video games</hobbyname>
+    </hobby>
+    <hobby>
+  	 <hobbyname>Table Tennis</hobbyname>
+    </hobby>
+  </hobbies>
+</resume>

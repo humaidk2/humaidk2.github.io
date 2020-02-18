@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style type="text/css">
+		@font-face {
+		  font-family: 'Pokemon';
+		  src:  url('pokemon.ttf');
+		}
+		::-webkit-scrollbar {
+			    width: 0px;
+			    background: transparent; /* make scrollbar transparent */
+			}
+		body, html{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background: url("./wallpaper3.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#comments-container{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			background: transparent;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		#comments-main-container{
+			height: 80%;
+			width: 65%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#comments-info{
+			width: 80%;
+			height: 50%;
+			flex: 5 1 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+		}
+		#comments-question{
+			width: 90%;
+			height: 30%;
+			font-family: pokemon;
+			word-spacing: 0;
+			font-size: 45px;
+			text-align: center;
+		}
+		#comments-meter{
+			width: 90%;
+			height: 10%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: right;
+			border-radius: 80px;
+			border: 4px solid white;
+		}
+		#comments-meter-fill{
+			width: 0%;
+			height: 100%;
+			background-color: white;
+			color: black;
+			text-align: left;
+			border-radius: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.5s ease;
+		}
+		#comments-meter-empty{
+			width: 50%;
+			height: 100%;
+			text-align: left;
+			border-radius: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#comments-buttons{
+			width: 80%;
+			height: 30%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+		}
+		.comments-button{
+			background-color: yellow;
+			width: 15%;
+			height: 60%;
+			text-align: center;
+		}
+		#comment-main{
+			background: rgba(255, 255, 255, 0.5);
+			width: 60%;
+			height: 100%;
+			max-height: 100%;
+			padding-top:1%; 
+			overflow-y: scroll;
+		}
+
+		#comment-container{
+			background: black;
+			margin-left: 8%;
+			margin-top: 1%;
+			padding: 2%;
+			width: 80%;
+			height: 60%;
+			display: flex;
+			flex-direction: row;
+		}
+		#comment-image{
+			width: 20%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#comment-image img{
+			width: 70%;
+			height: 70%;
+			border-radius: 20%;
+		}
+		#comment-info{
+			width: 83%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		#comment-name{
+			width: 100%;
+			height: 20%;
+			display: flex;
+			justify-content: center;
+		}
+		#comment{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#comments-comment{
+
+			width: 100%;
+			height: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#comments-comment textarea{
+			resize: none;
+			height: 30px;
+			margin: 1%;
+			width: 60%;
+			
+		}
+		#comment-button{
+			height: 28%;
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+		}
+		.up{
+			font-family: pokemon;
+			font-size: 35px;
+			background: white;
+			color: black;
+		}
+		.up:hover{
+			box-shadow: 2px 2px grey;
+		}
+		.down{
+			font-family: pokemon;
+			font-size: 35px;
+			background: white;
+			color: black;
+		}
+		.down:hover{
+			box-shadow: 2px 2px grey;
+		}
+	</style>
+</head>
+<body onload="display(); createDB();">
+	<div id="comments-container">
+		<div id="comments-main-container">
+			<div id="comments-info">
+				<div id="comments-question">Is this a cool profile?</div>
+				<div id="comments-meter"><div id="comments-meter-fill"><span class="count"></span></div><div id="comments-meter-empty"> </div></div>
+			</div>
+			<div id="comments-buttons">
+				<div class="comments-button up" onclick="voteUp();">YES</div>
+				<div id="comment-main">
+					<div id="comment-container">
+						<div id="comment-image"><img src="./devil.gif"></div>
+						<div id="comment-info">
+							<div id="comment-name"><label>Name: <input id="name"  type="text" name=""></label></div>
+							<div id="comment-name"><label>Email: <input id="email"  type="text" name=""></label></div>
+							<div id="comments-comment"><label>Comment: <textarea id="comment-value"></textarea></label></div>
+							<div id="comment-button"><button onclick="storeComment();">Add Comment</button></div>
+						</div>
+					</div>
+				</div>
+				<div class="comments-button down" onclick="voteDown();">NO</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="home-nav">
+		<div class=" home-links home-links-comments">
+			<div><a href="./index.html">Home Page</a></div>
+			<div ><a href="./gallery.html">Gallery</a></div>
+			<div><a href="./skills.html">Skills</a></div>
+			<div><a href="./projects.html">Projects</a></div>
+			<div><a href="./resume.xml">Ciriculum Vitae</a></div>
+			<div id="nav-comments"><a href="./comments.html">Comments</a></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var c = document.getElementById("comments-meter-fill");
+		var y = 50;
+		var totalVotes = 6;
+		var positive = 3;
+		var negative = 0;
+		var avg ="";
+		var db = openDatabase("employee", "1.0", "database for my friends", 2 * 1024 * 1024);
+	    function createDB() {
+	      db.transaction(
+	        function (transaction) {
+	          transaction.executeSql(
+	          " " +
+	          "CREATE TABLE IF NOT EXISTS comments(" + 
+	          "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+	          "name TEXT NOT NULL," +
+	          "email TEXT NOT NULL," +
+	          "comment TEXT NOT NULL" +
+	          ");",
+	          [],
+	          function dataHandler(transaction, results) {},
+	          function errorHandler(transaction, error) {
+	            console.error("Error creating table: " + error.code + ": " + error.message);
+	          });
+	        }
+	      );
+	    }
+	    function storeComment() {
+	      db.transaction(
+	        function (transaction) {
+	          	transaction.executeSql(
+		          " " +
+		          "INSERT INTO comments(name, email, comment) " + 
+		          "Values (?, ?, ?);",
+		          [document.getElementById("name").value, document.getElementById("email").value, document.getElementById("comment-value").value],
+		          function dataHandler(transaction, results) {
+		            refresh();
+		          },
+		          function errorHandler(transaction, error) {
+		            console.error("Error creating table: " + error.code + ": " + error.message);
+		          });
+		        }
+		      );
+		    }
+	    function refresh() {
+	      db.transaction(
+	        function (transaction) {
+	          transaction.executeSql(
+	          " " +
+	          "Select * From comments;" ,
+	          [],
+	          function dataHandler(transaction, results) {
+	            commentDisplay(results.rows);
+	          },
+	          function errorHandler(transaction, error) {
+	            console.error("Error creating table: " + error.code + ": " + error.message);
+	          });
+	        }
+	      );
+	    }
+	    function commentDisplay(comments) {
+	      var x = document.getElementById("comment-main");
+	      var s = "";
+	      
+	     s += '<div id="comment-container">' + 
+						'<div id="comment-image"><img src="./devil.gif"></div>' +
+						'<div id="comment-info">' +
+							'<div id="comment-name"><label>Name: <input id="name"  type="text" name=""></label></div>' +
+							'<div id="comment-name"><label>Email: <input id="email"  type="text" name=""></label></div>' +
+							'<div id="comments-comment"><label>Comment: <textarea id="comment-value"></textarea></label></div>' +
+							'<div id="comment-button"><button onclick="storeComment();">Add Comment</button></div>' +
+						'</div>' +
+					'</div>';
+	      for(var i = 0;i < comments.length;i++) {
+	       s += '<div id="comment-container">' +
+						'<div id="comment-image"><img src="./devil.gif"></div>' +
+			 			'<div id="comment-info">' +
+							'<div id="comment-name">Name ' + comments[i].name + '</div>' +
+							
+			'<div id="comment-name">Email: '  + comments[i].email + '</div>' +
+							'<div id="comments-comment">Comment ' + comments[i].comment + '</div>' +
+						'</div>' +
+					'</div>';
+	      }
+	      x.innerHTML = s;
+    }
+		function voteUp() {
+			positive++;
+			totalVotes++;
+			display();
+			
+		}
+		function voteDown(){
+			positive--;
+			totalVotes++;
+			display();
+		}
+		function display() {
+			avg = ((positive / totalVotes) * 100) + "%";
+			$('#comments-meter-fill').width(0).each(function () {
+			    $(this).data("origWidth", $(this).width())
+				    .width(0)
+				    .animate({
+				      width: avg,
+			        	easing: 'linear' // or + "%" if fluid
+				    }, 500);
+			});
+			$('.count').each(function () {
+			    $(this).prop('Counter',0).animate({
+			        Counter: (positive / totalVotes) *100
+			    }, {
+			        duration: 500,
+			        easing: 'linear',
+			        step: function (now) {
+			            $(this).text(Math.ceil(now) + "%");
+			        }
+			    });
+			});
+			$('#comments-meter-empty').width(100).each(function () {
+			    $(this).data("origWidth", $(this).width())
+				    .width(100)
+				    .animate({
+				      width: 100 - ((positive / totalVotes) * 100),
+			        	easing: 'linear' // or + "%" if fluid
+				    }, 500);
+			});
+		}
+	</script>
+</body>
+</html>

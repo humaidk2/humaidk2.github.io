@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/sunburst-chart@1.0.5/dist/sunburst-chart.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	<style type="text/css">
+		body,html{
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			background: url("./wallpaper12.png");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		#skillschart-container{
+			height: 70%;
+			width: 80%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#skills-chart{
+			height: 54%;
+			width: 28%;
+			font-size: 20px;
+		}
+		h1{
+			margin: 0;
+			text-align: center;
+		}
+		.sunburst-viz text .text-contour{
+			stroke: none;
+		}
+		.sunburst-viz .main-arc{
+			stroke: none;
+		}
+		.sunburst-viz text{
+			font-family: Lato;
+			font-size: 24px;
+
+		}
+	</style>
+</head>
+<body onload="loadChart();">
+	<div id="skills-header">Skills Chart</div>	
+	<div id="skillschart-container">
+		<div id="skills-chart"></div>
+	</div>
+	<div class="home-nav">
+			<div class=" home-links home-links-skills">
+				<div><a href="./index.html">Home Page</a></div>
+				<div><a href="./gallery.html">Gallery</a></div>
+				<div id="nav-skills"><a href="./skills.html">Skills</a></div>
+				<div><a href="./projects.html">Projects</a></div>
+				<div><a href="./resume.xml">Ciriculum Vitae</a></div>
+				<div><a href="./comments.html">Comments</a></div>
+			</div>
+		</div>
+	<script type="text/javascript">
+		function loadChart() {
+			var c = document.getElementById("skills-chart");
+			var data = {
+			  name: "Skills",
+			  color: "#ffe9dc",
+			  children: [
+		      	{
+		      		name: "Web Development",
+		      		color: "#ffe9dc",
+		      		children:
+		      		[
+		      			{
+		      				name: "Javascript", 
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "node.js", 
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "React.js", 
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "Babylon.js", 
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+				      	{
+				      		name: "HTML5",
+				      		color: "#d0e1f9 ",
+				      		value: 2
+				      	},
+				      	{
+				      		name: "CSS3",
+				      		color: "#d0e1f9 ",
+				      		value: 2
+				      	},
+				      	{
+				      		name: "MySql",
+				      		color: "#d0e1f9 ",
+				      		value: 2
+				      	},
+		      		]
+		      	},
+		      	{
+		      		name: "Java",
+		      		color: "#ffe9dc",
+		      		children: 
+		      		[
+		      			{
+		      				name: "Javafx",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "Streams",
+		      				color: "#d0e1f9 ",
+		      				value: 1
+		      			},
+		      			{
+		      				name: "Exceptions",
+		      				color: "#d0e1f9 ",
+		      				value: 1
+		      			}
+		      		]
+		      	},
+		      	{
+		      		name: "Others",
+		      		color: "#ffe9dc",
+		      		children: 
+		      		[
+		      			{
+		      				name: "C",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "Unity",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "Gimp",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      		]
+		      	},
+		      	{
+		      		name: "Hobbies",
+		      		color: "#ffe9dc",
+		      		children: 
+		      		[
+		      			{
+		      				name: "Photos",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "Games",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      			{
+		      				name: "Coding",
+		      				color: "#d0e1f9 ",
+		      				value: 2
+		      			},
+		      		]
+		      	},
+			  ]
+			}
+			Sunburst()
+			    .data(data)
+			    .color('color')
+			    .height('600')
+			    .width('610')
+			    (document.getElementById("skills-chart"));
+			    console.log(c.children[0].children[0])
+		}
+	</script>
+</body>
+</html>

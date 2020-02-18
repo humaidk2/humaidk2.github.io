@@ -2,33 +2,32 @@
 <html>
 <head>
 	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Archivo+Black|Bevan|Monoton|Roboto+Slab:700|Ultra" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
-	<iframe src="./neon.wav"  type=”audio/mpeg  allow="autoplay" style="display:none" id="iframeAudio">
-</iframe> 
-	
-	<script type="text/javascript">
-		// var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-  //   if(!isChrome){
-  //   	 var elem = document.getElementById('iframeAudio');
-  //   elem.parentNode.removeChild(elem);
-  //   }
-  // else{
-  //   var elem = document.getElementById('myaudio');
-  //   elem.parentNode.removeChild(elem); //just to make sure that it will not have 2x audio in the background 
-  // }
-	</script>
-	<div class="top-bar">
-		<div class="nav-bar">
-			<div><a href="./about">Contact</a></div>
-			<div><a href="./about">About</a></div>
-			<div><a href="./about">Projects</a></div>
-			<div><a href="./Gallery/index.html">Gallery</a></div>
+	<div id="home-container">
+		<!-- title -->
+		<div id="home-main" >
+			Humaid Khan
+		</div>
+		<!-- nav overlay -->
+		<div class="home-nav">
+			<!-- nav links -->
+			<div class="home-links">
+				<div id="nav-home"><a href="./index.html">Home page</a></div>
+				<div><a href="./gallery.html">Gallery</a></div>
+				<div><a href="./skills.html">Skills</a></div>
+				<div><a href="./projects.html">Projects</a></div>
+				<div><a href="./resume.xml">Curriculum Vitae</a></div>
+				<div><a href="./comments.html">Comments</a></div>
+			</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="centered-header">Humaid Khan</div>
-	</div>
+	
+	<script type="text/javascript" src="easings.js"></script>
+	<script type="text/javascript" src="loginScript.js"></script>
 </body>
 </html>
