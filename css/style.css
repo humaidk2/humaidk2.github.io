@@ -28,14 +28,6 @@ body
 	color:#555;
 }
 
-/* drop target state */
-[data-draggable="target"][aria-dropeffect="move"]
-{
-	border-color:#68b;
-
-	background:#fff;
-}
-
 /* drop target focus and dragover state */
 [data-draggable="target"][aria-dropeffect="move"]:focus,
 [data-draggable="target"][aria-dropeffect="move"].dragover
