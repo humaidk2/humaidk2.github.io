@@ -1,33 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Archivo+Black|Bevan|Monoton|Roboto+Slab:700|Ultra" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+<html lang="en" >
 
+<head>
+  <meta charset="UTF-8">
+  <title>Keyboard Dropping</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
+
 <body>
-	<div id="home-container">
-		<!-- title -->
-		<div id="home-main" >
-			Humaid Khan
-		</div>
-		<!-- nav overlay -->
-		<div class="home-nav">
-			<!-- nav links -->
-			<div class="home-links">
-				<div id="nav-home"><a href="./index.html">Home page</a></div>
-				<div><a href="./gallery.html">Gallery</a></div>
-				<div><a href="./skills.html">Skills</a></div>
-				<div><a href="./projects.html">Projects</a></div>
-				<div><a href="./resume.xml">Curriculum Vitae</a></div>
-				<div><a href="./comments.html">Comments</a></div>
-			</div>
-		</div>
-	</div>
-	
-	<script type="text/javascript" src="easings.js"></script>
-	<script type="text/javascript" src="loginScript.js"></script>
+
+    <ol data-draggable="target">
+        <b>Unsure</b>
+    </ol>
+
+	<ol data-draggable="target" class="tracker">
+		<b>Tracker</b>
+        <li data-draggable="item">ServerId</li>
+        <li data-draggable="item">ServerLocation</li>
+        <li data-draggable="item">StorageAmount</li>
+        <li data-draggable="item">ServerStatus</li>
+        <li data-draggable="item">ServerDownTime</li>
+        <li data-draggable="item">ServerRegion</li>
+        <li data-draggable="item">ChunkId</li>
+        <li data-draggable="item">ChunkQuality</li>
+        <li data-draggable="item">ChunkStatus</li>
+        <li data-draggable="item">ChunkLocation</li>
+	</ol>
+
+	<ol data-draggable="target" class="firebase">
+		<b>Firebase</b>
+        <li data-draggable="item">UserId</li>
+        <li data-draggable="item">Username</li>
+        <li data-draggable="item">UserPassword</li>
+        <li data-draggable="item">UserFirstName</li>
+        <li data-draggable="item">UserLastName</li>
+        <li data-draggable="item">UserBirthDate</li>
+        <li data-draggable="item">UserIconLocation</li>
+        <li data-draggable="item">UserPlan</li>
+        <li data-draggable="item">UserPlanStorage</li>
+        <li data-draggable="item">UserPlanCopies</li>
+        <li data-draggable="item">UserPlanRegions</li>
+        <li data-draggable="item">UserRegion</li>
+        <li data-draggable="item">fileIds</li>
+        <li data-draggable="item">fileNames</li>
+        <li data-draggable="item">fileStructure</li>
+        <li data-draggable="item">fileTypes</li>
+        <li data-draggable="item">fileSize</li>
+        <li data-draggable="item">passwordEncryptedKeys</li>
+        <li data-draggable="item">passwordEncryptedIVs</li>
+        <li data-draggable="item">passwordEncryptedPrivateKeys</li>
+        <li data-draggable="item">PublicKeys</li>
+	</ol>
+
+	<ol data-draggable="target" class="server">
+		<b>Server</b>
+        <li data-draggable="item">ServerStorage</li>
+        <li data-draggable="item">Chunks</li>
+        <li data-draggable="item">ChunkOrder</li>
+        <li data-draggable="item">EncryptedChunkIV</li>
+        <li data-draggable="item">EncryptedChunkHash</li>
+	</ol>
+
+	<ol data-draggable="target" class="client">
+		<b>Client</b>
+         <li data-draggable="item">ChunkKey</li>
+         <li data-draggable="item">Public key of user</li>
+         <li data-draggable="item">Private key of user</li>
+        <li data-draggable="item">ChunkIV - verify that its unique</li>
+	</ol>
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
 </body>
+
 </html>
