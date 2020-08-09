@@ -5,7 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particleArray = [];
-let adjustX = -50;
+let adjustX = 0;
 let adjustY = -30;
 
 // handle mouse
@@ -19,7 +19,7 @@ window.addEventListener("mousemove", function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
 });
-ctx.fillStyle = "white";
+ctx.fillStyle = "blue";
 ctx.font = "20px Verdana";
 ctx.fillText("Humaid Khan", 20, 60);
 
@@ -117,7 +117,7 @@ function connect() {
       let distance = Math.sqrt(dx * dx + dy * dy);
       if (distance < 30) {
         opacityValue = 1 - distance / 30;
-        ctx.strokeStyle = "rgb(255, 255, 255, " + opacityValue + ")";
+        ctx.strokeStyle = "rgb(125, 125, 255, " + opacityValue + ")";
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(particleArray[a].x, particleArray[a].y);
