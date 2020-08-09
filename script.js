@@ -19,7 +19,7 @@ window.addEventListener("mousemove", function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
 });
-ctx.fillStyle = "blue";
+ctx.fillStyle = "white";
 ctx.font = "20px Verdana";
 ctx.fillText("Humaid Khan", 20, 60);
 
@@ -35,7 +35,7 @@ class Particle {
     this.density = Math.random() * 30 + 1;
   }
   draw() {
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "blue";
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
