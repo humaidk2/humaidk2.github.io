@@ -5,7 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particleArray = [];
-let adjustX = -50;
+let adjustX = 0;
 let adjustY = -30;
 
 // handle mouse
@@ -21,7 +21,7 @@ window.addEventListener("mousemove", function (event) {
 });
 ctx.fillStyle = "white";
 ctx.font = "20px Verdana";
-ctx.fillText("Humaid Khan", 20, 60);
+ctx.fillText("Humaid", 20, 60);
 
 const textCoordinates = ctx.getImageData(0, 0, 100, 100);
 
@@ -35,7 +35,7 @@ class Particle {
     this.density = Math.random() * 30 + 1;
   }
   draw() {
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "blue";
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -117,7 +117,7 @@ function connect() {
       let distance = Math.sqrt(dx * dx + dy * dy);
       if (distance < 30) {
         opacityValue = 1 - distance / 30;
-        ctx.strokeStyle = "rgb(255, 255, 255, " + opacityValue + ")";
+        ctx.strokeStyle = "rgb(120, 120, 255, " + opacityValue + ")";
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(particleArray[a].x, particleArray[a].y);
