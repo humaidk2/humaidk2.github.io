@@ -1,0 +1,23 @@
+{
+  "name": "humaidk2.github.io",
+  "version": "1.0.0",
+  "description": "A Pen created at CodePen.io. You can find this one at https://codepen.io/SitePoint/pen/vEzXbj.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humaidk2/humaidk2.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/humaidk2/humaidk2.github.io/issues"
+  },
+  "homepage": "https://github.com/humaidk2/humaidk2.github.io#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

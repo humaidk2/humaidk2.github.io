@@ -19,6 +19,11 @@ window.addEventListener("mousemove", function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
 });
+window.addEventListener("touchend", function (event) {
+  mouse.x = event.x;
+  mouse.y = event.y;
+  7;
+});
 ctx.fillStyle = "white";
 ctx.font = "20px Verdana";
 ctx.fillText("Humaid Khan", 20, 60);
