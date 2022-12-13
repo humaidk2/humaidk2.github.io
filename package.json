@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/humaidk2/humaidk2.github.io#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
