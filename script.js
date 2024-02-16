@@ -21,9 +21,9 @@ window.addEventListener("mousemove", function (event) {
 });
 ctx.fillStyle = "white";
 ctx.font = "20px Verdana";
-ctx.fillText("Humaid Khan", 20, 60);
+ctx.fillText("Give up Kip", 10, 60);
 
-const textCoordinates = ctx.getImageData(0, 0, 100, 100);
+const textCoordinates = ctx.getImageData(0, 0, 300, 300);
 
 class Particle {
   constructor(x, y) {
